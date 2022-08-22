@@ -3,7 +3,18 @@
 
 {% block content %}
 
-  
+  <div id="overlay" onclick="off()">
+    <div id="image"><img src="{{ url_for('static',filename = 'image/webqr.png')  }}" alt=""></div>
+  </div>
+
+  <div class="qr">
+    <div class="col left text-center">
+      <h1 style="margin: 55px;">Wanny try on Mobile ?...</h1>
+    </div>
+    <div class="col right text-center" >
+      <button type="button" onclick="on()" class="btn btn-secondary" style="margin-top: 100px;">CLICK ME</button>
+    </div>
+  </div>
 
   <div class="container mt-4">
     <div class="card mb-3 mx-auto" style="max-width: 80%;">
@@ -60,4 +71,14 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function on() {
+      document.getElementById("overlay").style.display = "block";
+    }
+    
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
 {% endblock %}
